@@ -1,5 +1,6 @@
 __pycache__/
 qrcode_agentes_ia.db
 gerar_qr.py
+cb.jpg
 *.pyc
 .env
