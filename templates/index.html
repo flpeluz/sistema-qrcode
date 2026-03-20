@@ -6,20 +6,41 @@
     <title>{{ projeto.titulo }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
-    <div class="max-w-sm w-full bg-gray-800 border-t-8 border-{{ projeto.cor }}-500 rounded-2xl shadow-2xl p-8 text-center">
-        <h1 class="text-2xl font-bold">{{ projeto.titulo }}</h1>
-        <p class="text-gray-400 text-sm mt-2">{{ projeto.subtitulo }}</p>
+<body class="bg-gray-100 font-sans">
 
-        <div class="mt-8">
-            <a href="{{ projeto.link_youtube }}" class="block w-full py-4 bg-{{ projeto.cor }}-600 hover:bg-{{ projeto.cor }}-500 rounded-xl font-bold transition-all shadow-lg text-center">
-                Assistir Vídeo no YouTube
-            </a>
+    <div class="bg-red-700 text-white text-center py-12 px-4 shadow-lg">
+        <p class="text-sm uppercase tracking-widest mb-4 font-semibold">15°GB - 3° SGB</p>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">{{ projeto.titulo }}</h1>
+        <p class="text-lg opacity-90">Assista ao vídeo de orientação abaixo.</p>
+    </div>
+
+    <div class="max-w-2xl mx-auto -mt-8 p-4">
+        <a href="{{ projeto.link_acao }}" class="block w-full bg-white border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white transition-all text-center py-4 rounded-lg font-bold text-xl shadow-xl mb-8">
+            {{ projeto.texto_botao }}
+        </a>
+
+        <div class="bg-white p-2 rounded-xl shadow-2xl">
+            <div class="aspect-video rounded-lg overflow-hidden border-4 border-white">
+                <iframe 
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/{{ projeto.video_id }}" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="p-4">
+                <p class="text-gray-600 text-sm text-center italic">
+                    {{ projeto.descricao_video }}
+                </p>
+            </div>
         </div>
 
-        <p class="mt-8 text-[10px] text-gray-500 uppercase tracking-widest">
-            Sistema de QR Code Independente
+        <p class="mt-8 text-center text-[10px] text-gray-400 uppercase tracking-widest">
+            © 2026 Sistema de Orientação - CBPMESP
         </p>
     </div>
+
 </body>
 </html>
