@@ -1,6 +1,11 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, redirect
 
 app = Flask(__name__)
+
+@app.route('/')
+def home():
+    # Redireciona automaticamente para o seu projeto principal
+    return redirect('/agentes-ia')
 
 # Aqui você define os destinos dos seus QR Codes.
 # 'slug' é o que vai no final da URL (ex: /video-ia)
