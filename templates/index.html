@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ projeto.titulo }} - Training Track</title>
+    <title>{{ projeto.titulo }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans flex items-center justify-center min-h-screen p-4">
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
     <div class="max-w-sm w-full bg-gray-800 border-t-8 border-{{ projeto.cor }}-500 rounded-2xl shadow-2xl p-8 text-center">
-        <div class="mb-6">
-            <div class="bg-{{ projeto.cor }}-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
-                <span class="text-2xl font-bold italic">TT</span>
-            </div>
-            <h1 class="text-2xl font-bold tracking-tight">{{ projeto.titulo }}</h1>
-            <p class="text-gray-400 text-sm mt-2">{{ projeto.subtitulo }}</p>
-        </div>
+        <h1 class="text-2xl font-bold">{{ projeto.titulo }}</h1>
+        <p class="text-gray-400 text-sm mt-2">{{ projeto.subtitulo }}</p>
 
-        <div class="space-y-4">
-            <a href="{{ projeto.link_youtube }}" class="block w-full py-4 bg-{{ projeto.cor }}-600 hover:bg-{{ projeto.cor }}-500 rounded-xl font-bold transition-all shadow-lg active:scale-95">
-                Acessar Conteúdo
-            </a>
-            <a href="https://github.com/flpeluz" class="block w-full py-4 bg-gray-700 hover:bg-gray-600 rounded-xl font-bold transition-all">
-                Ver Projeto no GitHub
+        <div class="mt-8">
+            <a href="{{ projeto.link_youtube }}" class="block w-full py-4 bg-{{ projeto.cor }}-600 hover:bg-{{ projeto.cor }}-500 rounded-xl font-bold transition-all shadow-lg text-center">
+                Assistir Vídeo no YouTube
             </a>
         </div>
 
-        <p class="mt-8 text-[10px] text-gray-500 uppercase tracking-[0.2em]">
-            © 2026 Training Track Analytics
+        <p class="mt-8 text-[10px] text-gray-500 uppercase tracking-widest">
+            Sistema de QR Code Independente
         </p>
     </div>
 </body>

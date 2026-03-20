@@ -2,31 +2,23 @@ from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
-# Aqui é onde você "cadastra" seus novos projetos. 
-# Para cada novo QR Code, você adiciona uma linha aqui.
-PROJETOS = {
-    'agentes-ia': {
+# Aqui você define os destinos dos seus QR Codes.
+# 'slug' é o que vai no final da URL (ex: /video-ia)
+QR_DESTINOS = {
+    'video-ia': {
         'titulo': 'Agentes de IA',
-        'subtitulo': 'Ecossistema Training Track Analytics',
+        'subtitulo': 'Demonstração Prática do Sistema',
         'link_youtube': 'https://youtu.be/iyjzw3xq3e8?si=RQx3Aumw33DbHKjT',
-        'cor': 'orange'
-    },
-    'logistica': {
-        'titulo': 'Logística e PR',
-        'subtitulo': 'Gestão de Materiais e Relações Públicas',
-        'link_youtube': 'https://www.youtube.com/watch?v=outro_video',
-        'cor': 'red'
+        'cor': 'orange' # Cor da borda e botão
     }
 }
 
 @app.route('/<slug>')
-def dynamic_page(slug):
-    # Se o link do QR Code (slug) existir no nosso dicionário, ele abre a página
-    if slug in PROJETOS:
-        dados = PROJETOS[slug]
-        return render_template('index.html', projeto=dados)
+def landing_page(slug):
+    if slug in QR_DESTINOS:
+        projeto = QR_DESTINOS[slug]
+        return render_template('index.html', projeto=projeto)
     else:
-        # Se não existir, dá erro 404
         abort(404)
 
 if __name__ == '__main__':
