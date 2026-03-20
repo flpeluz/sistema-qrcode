@@ -1,0 +1,4 @@
+__pycache__/
+qrcode_agentes_ia.db
+*.pyc
+.env

@@ -1,0 +1,4 @@
+flask
+gunicorn
+segno
+Pillow
